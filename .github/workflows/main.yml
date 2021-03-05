@@ -1,4 +1,4 @@
-name: Docker django app and postgress db 
+name: Docker CI/CD 
 
 on: [push]
 
@@ -12,12 +12,11 @@ jobs:
         
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
     steps:
-    
     - uses: actions/checkout@v2
          
     - name: docker build image in djangoapp
-    
-        docker build -t mylocalimage . 
+      run: |
+       docker build -t mylocalimage . 
         
     - name: docker run to create container 
       run: |
