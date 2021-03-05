@@ -7,9 +7,11 @@ services:
         command: python manage.py runserver 0.0.0.0:8080
         volumes:
             - .:/usr/src/app
+         
         ports:
             - "8080:8080"
-        depends_on:
+     #this is the postgress image
+       depends_on:
             - pgdb
         pgdb:
             image: postgres
