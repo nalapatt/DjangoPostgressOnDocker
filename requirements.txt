@@ -1,3 +1,5 @@
+#to make sure the python image is from version 3 to 4
 Django>=3.0,<4.0
+#postgress db version
 psycopg2-binary>=2.8
 
