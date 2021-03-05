@@ -1,7 +1,4 @@
- build:
-
-    runs-on: ubuntu-latest
-    name: Docker CI/CD 
+name: Docker django app and postgress db 
 
 on: [push]
 
@@ -18,11 +15,11 @@ jobs:
     
     - uses: actions/checkout@v2
          
-    - name: docker build image in github actions
-      run: |
+    - name: docker build image in djangoapp
+    
         docker build -t mylocalimage . 
         
-    - name: docker run to create container in github actions
+    - name: docker run to create container 
       run: |
        docker run -d -p 80:80 mylocalimage 
     
